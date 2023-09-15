@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class LogTestController {
 
-//    private final Logger log = LoggerFactory.getLogger(getClass()); -> 롬복으로 대체
+//    private final Logger log = LoggerFactory.getLogger(getClass()); -> 롬복 어노테이션 @Slf4j 으로 대체
 
     @RequestMapping("/log-test")
     public String logTest() {
