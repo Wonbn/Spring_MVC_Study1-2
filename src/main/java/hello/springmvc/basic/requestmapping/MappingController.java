@@ -12,7 +12,7 @@ public class MappingController {
 
     /**
      * 기본 요청
-     * /hello-basic, /hello-basic/ 둘다 허용
+     * /hello-basic 만 허용 (/hello-basic/ 이건 허용 X) -> 스프링 버전 3.0 이후부터 적용
      * HTTP 메서드 모두 허용 GET, HEAD, POST, PUT, PATCH, DELETE
      */
     @RequestMapping(value = {"/hello-basic", "/hello-go"})
@@ -58,8 +58,8 @@ public class MappingController {
     }
 
     /**
-     * PathVariable 형식을 요즘 많이 사용함.
-     * PathVariable 사용 다중
+     * @PathVariable 형식을 요즘 많이 사용함.
+     * @PathVariable 사용 다중
      */
     @GetMapping("/mapping/users/{userId}/orders/{orderId}")
     public String mappingPath(@PathVariable String userId, @PathVariable Long orderId) {

@@ -22,7 +22,7 @@ public class RequestParamController {
      */
     @RequestMapping("/request-param-v1")
     public void requestParamV1(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String username = request.getParameter(":username");
+        String username = request.getParameter("username");
         int age = Integer.parseInt(request.getParameter("age"));
         log.info("username={}, age={}", username, age);
 
@@ -135,7 +135,7 @@ public class RequestParamController {
 
     /**
      * @ModelAttribute 생략 가능
-     * String, int 같은 단순 타입 = @RequestParam
+     * String, int, Integer 같은 단순 타입 = @RequestParam
      * argument resolver 로 지정해둔 타입 외 = @ModelAttribute
      */
     @ResponseBody
